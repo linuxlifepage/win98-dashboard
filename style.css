@@ -1,0 +1,449 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: "Tahoma", "Geneva", sans-serif; /* Classic Windows font */
+    font-size: 11px;
+}
+
+.desktop {
+    background-image: url('img/background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: calc(100% - 28px); /* Full height minus taskbar */
+    width: 100%;
+    position: relative;
+    padding: 5px;
+    box-sizing: border-box;
+    height: calc(100% - 0px); /* Adjusted height considering padding and taskbar */
+    overflow: hidden;
+}
+
+.icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 75px; /* Approximate icon width */
+    margin: 10px 5px;
+    cursor: default; /* Standard cursor for desktop */
+    color: white;
+}
+
+.icon img {
+    width: 32px; /* Standard icon size */
+    height: 32px;
+    margin-bottom: 5px;
+    /* Placeholder background for missing icons */
+    /*background-color: rgba(255, 255, 255, 0.2);*/
+    /*border: 1px dashed grey;*/
+}
+
+.icon span {
+    background-color: #008080; /* Turquoise background by default */
+    color: white; /* White text */
+    padding: 1px 3px;
+    border: 1px solid transparent; /* Invisible border for layout */
+    margin-top: 2px; /* Small space between icon and text */
+}
+
+/* Simulate icon selection/focus/hover */
+.icon:focus,
+.icon:active,
+.icon:hover {
+   outline: none; /* Remove default browser outline */
+}
+
+.icon:focus span,
+.icon:active span,
+.icon:hover span {
+   background-color: #000080; /* Dark blue background on hover/focus */
+   color: white;
+   border: 1px dotted white; /* Dotted border like Windows selection */
+}
+
+
+.taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 28px; /* Standard taskbar height */
+    background-color: #c0c0c0; /* Classic Windows grey */
+    border-top: 1px solid #ffffff; /* White highlight */
+    box-shadow: inset 0 1px 0 #dfdfdf; /* Inner shadow */
+    display: flex;
+    align-items: center;
+    padding: 0 2px;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+.start-button {
+    background-color: #c0c0c0;
+    border: 1px solid;
+    border-color: #ffffff #808080 #808080 #ffffff; /* 3D effect */
+    box-shadow: inset 1px 1px 0 #dfdfdf, 1px 1px 0 #000000; /* Inner/outer shadow */
+    padding: 2px 6px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 4px;
+}
+
+.start-button img {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    /* Placeholder */
+    background-color: lightblue;
+    border: 1px solid grey;
+}
+
+.start-button:active {
+    border-color: #808080 #ffffff #ffffff #808080;
+    box-shadow: inset 1px 1px 0 #000000;
+    padding: 3px 5px 1px 7px; /* Adjust padding for pressed effect */
+}
+
+
+.taskbar-divider {
+    height: 100%;
+    width: 1px;
+    background-color: #808080; /* Dark grey */
+    border-right: 1px solid #ffffff; /* White highlight */
+    margin: 0 4px;
+}
+
+.quick-launch {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.quick-launch img {
+    width: 20px;
+    height: 20px;
+    margin: 0 2px;
+    cursor: pointer;
+    /* Placeholder */
+    background-color: lightgrey;
+    border: 1px solid grey;
+}
+
+.task-items {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    overflow: hidden; /* Hide overflow if too many items */
+    margin-left: 4px;
+}
+
+.task-item {
+    background-color: #c0c0c0;
+    border: 1px solid;
+    border-color: #ffffff #808080 #808080 #ffffff; /* 3D effect */
+    box-shadow: inset 1px 1px 0 #dfdfdf; /* Inner shadow */
+    padding: 2px 10px;
+    margin: 0 2px;
+    height: 22px; /* Slightly smaller than taskbar */
+    min-width: 100px; /* Minimum width */
+    max-width: 160px; /* Max width from screenshot */
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.task-item:active, .task-item.active { /* Style for active/pressed task */
+    border-color: #808080 #ffffff #ffffff #808080;
+    box-shadow: inset 1px 1px 0 #808080;
+    background-color: #e0e0e0; /* Slightly darker grey when pressed */
+    padding: 3px 9px 1px 11px;
+}
+
+
+.system-tray {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    background-color: #c0c0c0; /* Match taskbar */
+    border: 1px solid;
+    border-color: #808080 #ffffff #ffffff #808080; /* Sunken effect */
+    padding: 0 4px;
+    margin-left: 4px;
+}
+
+.system-tray img {
+    width: 20px;
+    height: 20px;
+    margin: 0 2px;
+     /* Placeholder */
+    background-color: lightgrey;
+    border: 1px solid grey;
+}
+
+.time {
+    margin-left: 6px;
+    padding: 0 4px;
+}
+/* --- Context Menu Styles --- */
+.context-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    background-color: #c0c0c0; /* Win98 grey */
+    border: 1px solid;
+    border-color: #ffffff #808080 #808080 #ffffff; /* 3D border */
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+    padding: 2px;
+    z-index: 1001; /* Above taskbar */
+    min-width: 100px;
+}
+
+.context-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.context-menu li {
+    padding: 3px 15px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.context-menu li:hover {
+    background-color: #000080; /* Dark blue highlight */
+    color: white;
+}
+
+/* --- Settings Modal Styles --- */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); /* Center the modal */
+    z-index: 1002; /* Above context menu */
+    background-color: #c0c0c0;
+    border: 1px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    box-shadow: inset 1px 1px 0 #dfdfdf, 1px 0 0 #000000, 0 1px 0 #000000, 1px 1px 0 #000000; /* Win98 window shadow */
+    min-width: 300px;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-header {
+    background-color: #000080; /* Dark blue title bar */
+    color: white;
+    padding: 3px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    cursor: default; /* Usually draggable, but not implemented here */
+}
+
+.modal-close-button {
+    background-color: #c0c0c0;
+    border: 1px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    box-shadow: inset 1px 1px 0 #dfdfdf, 1px 1px 0 #000000;
+    font-family: "Marlett", "Arial", sans-serif; /* Font for symbols like 'X' */
+    font-size: 10px;
+    padding: 0px 3px;
+    width: 16px;
+    height: 14px;
+    line-height: 12px;
+    text-align: center;
+    cursor: pointer;
+}
+.modal-close-button:active {
+    border-color: #808080 #ffffff #ffffff #808080;
+    box-shadow: inset 1px 1px 0 #000000;
+}
+
+
+.modal-body {
+    padding: 15px;
+}
+
+.modal-body label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.modal-body input[type="url"],
+.modal-body input[type="text"] { /* Added text for flexibility */
+    width: calc(100% - 10px); /* Full width minus padding */
+    padding: 3px;
+    margin-bottom: 10px;
+    border: 1px solid #808080;
+    box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #c0c0c0; /* Sunken effect */
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+}
+
+.modal-buttons button {
+    background-color: #c0c0c0;
+    border: 1px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    box-shadow: inset 1px 1px 0 #dfdfdf, 1px 1px 0 #000000;
+    padding: 4px 12px;
+    margin-left: 6px;
+    min-width: 70px;
+    cursor: pointer;
+}
+
+.modal-buttons button:active {
+    border-color: #808080 #ffffff #ffffff #808080;
+    box-shadow: inset 1px 1px 0 #000000;
+    padding: 5px 11px 3px 13px;
+}
+
+.modal-buttons button:focus {
+     outline: 1px dotted #000000;
+     outline-offset: -3px; /* Dotted focus outline inside the button */
+}
+
+/* Add simple styling for the anchor tag wrapping the icon */
+a.icon {
+    text-decoration: none; /* Remove underline from link */
+    color: inherit; /* Inherit text color */
+    display: flex; /* Ensure anchor behaves like the div */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 75px;
+    margin: 10px 5px;
+    cursor: default;
+}
+a.icon:focus {
+    outline: none; /* Remove browser default focus */
+}
+/* Hide new elements by default */
+#desktop-context-menu {
+    display: none; /* Initially hidden */
+}
+
+#create-shortcut-modal {
+    display: none; /* Initially hidden */
+}
+/* Start Menu Styles */
+.start-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    bottom: 30px; /* Position above the taskbar */
+    left: 0;
+    width: 200px; /* Adjust width as needed */
+    background-color: #c0c0c0; /* Windows 98 grey */
+    border: 2px solid;
+    border-top-color: #ffffff;
+    border-left-color: #ffffff;
+    border-right-color: #808080;
+    border-bottom-color: #808080;
+    box-shadow: 2px 2px 0px #000000;
+    padding: 2px;
+    z-index: 1000; /* Ensure it's above other elements */
+}
+
+.start-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.start-menu li {
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-family: 'Pixelated MS Sans Serif', Arial, sans-serif; /* Use the Win98 font */
+    font-size: 11px; /* Typical Win98 menu font size */
+}
+
+.start-menu li:hover {
+    background-color: #000080; /* Windows blue */
+    color: #ffffff; /* White text */
+}
+
+.start-menu li img {
+    width: 16px; /* Small icon size */
+    height: 16px;
+    margin-right: 8px;
+}
+
+.start-menu .start-menu-separator {
+    height: 1px;
+    background-color: #808080;
+    border-bottom: 1px solid #ffffff;
+    margin: 2px 0;
+    padding: 0; /* Remove padding for separator */
+}
+.start-menu .start-menu-separator:hover {
+     background-color: #808080; /* Don't highlight separator */
+}
+/* Shutdown Styles */
+body.shutdown-active {
+    background-image: url('assets/shutdown_background.png');
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden; /* Prevent scrollbars */
+}
+
+body.shutdown-active .desktop, /* Hide the entire desktop div */
+body.shutdown-active .taskbar,
+body.shutdown-active .context-menu, /* Hide context menus */
+body.shutdown-active .modal, /* Hide any open modals */
+body.shutdown-active .start-menu /* Hide start menu if somehow still visible */
+{
+    display: none !important; /* Use !important to override other styles if necessary */
+    visibility: hidden; /* Extra measure */
+}
+/* --- Icon Scaling Styles --- */
+
+/* Default (Small - 32px) - Already defined */
+/* .icon { width: 75px; } */
+/* .icon img { width: 32px; height: 32px; } */
+/* .icon span { font-size: 11px; } */
+
+/* Medium Icons (48px) */
+.desktop.icons-medium .icon {
+    width: 90px; /* Adjust container width */
+}
+.desktop.icons-medium .icon img {
+    width: 48px;
+    height: 48px;
+}
+.desktop.icons-medium .icon span {
+    font-size: 12px; /* Slightly larger font */
+    margin-top: 3px;
+}
+
+/* Large Icons (64px) */
+.desktop.icons-large .icon {
+    width: 105px; /* Adjust container width */
+}
+.desktop.icons-large .icon img {
+    width: 64px;
+    height: 64px;
+}
+.desktop.icons-large .icon span {
+    font-size: 13px; /* Even larger font */
+    margin-top: 4px;
+}

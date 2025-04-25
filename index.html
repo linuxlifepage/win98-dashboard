@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows 98 Desktop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app"></div>
+<script src="https://unpkg.com/webamp"></script>
+<script>
+    const app = document.getElementById("app")
+    const webamp = new Webamp({
+        initialTracks: [
+          {
+            metaData: {
+              artist: "DJ Mike Llama",
+              title: "Llama Whippin' Intro",
+            },
+            // NOTE: Your audio file must be served from the same domain as your HTML
+            // file, or served with permissive CORS HTTP headers:
+            // https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+            url: "https://cdn.jsdelivr.net/gh/captbaritone/webamp@43434d82cfe0e37286dbbe0666072dc3190a83bc/mp3/llama-2.91.mp3",
+            duration: 5.322286,
+          },
+          {
+            metaData: {
+              artist: "Some Artist",
+              title: "Title of Second Track",
+            },
+            url: "https://cdn.jsdelivr.net/gh/captbaritone/webamp@43434d82cfe0e37286dbbe0666072dc3190a83bc/mp3/llama-2.91.mp3",
+            duration: 5.322286,
+          },
+        ],
+      });
+    webamp.renderWhenReady(app);
+</script>
+    <div class="desktop">
+        <!-- DevOps/Admin Icons -->
+        <!-- Jenkins Icon: Change href for link, src for icon image -->
+        <a href="#" target="_blank" class="icon" id="jenkins" tabindex="0">
+            <img src="icons/placeholder.png" alt="Jenkins">
+            <span>Jenkins</span>
+        </a>
+        <!-- Grafana Icon: Change href for link, src for icon image -->
+        <a href="#" target="_blank" class="icon" id="grafana" tabindex="0">
+            <img src="icons/pack/grafana.png" alt="Grafana">
+            <span>Grafana</span>
+        </a>
+        <!-- Prometheus Icon: Change href for link, src for icon image -->
+         <a href="#" target="_blank" class="icon" id="prometheus" tabindex="0">
+            <img src="icons/pack/prometheus.png" alt="Prometheus">
+            <span>Prometheus</span>
+        </a>
+        <!-- Alertmanager Icon: Change href for link, src for icon image -->
+        <a href="#" target="_blank" class="icon" id="alertmanager" tabindex="0">
+            <img src="icons/alertmanager.png" alt="Alertmanager">
+            <span>Alertmanager</span>
+        </a>
+        <!-- Gitlab Icon: Change href for link, src for icon image -->
+        <a href="#" target="_blank" class="icon" id="gitlab" tabindex="0">
+            <img src="icons/pack/gitlab.png" alt="Gitlab">
+            <span>Gitlab</span>
+        </a>
+        <!-- Proxmox Icon: Change href for link, src for icon image -->
+        <a href="#" target="_blank" class="icon" id="proxmox" tabindex="0">
+            <img src="icons/pack/proxmox.png" alt="Proxmox">
+            <span>Proxmox</span>
+        </a>
+        <!-- Kibana Icon: Change href for link, src for icon image -->
+        <a href="#" target="_blank" class="icon" id="kibana" tabindex="0">
+            <img src="icons/pack/kibana.png" alt="Kibana">
+            <span>Kibana</span>
+        </a>
+        <!-- Gitea Icon: Change href for link, src for icon image -->
+        <a href="#" target="_blank" class="icon" id="gitea" tabindex="0">
+            <img src="icons/pack/gitea.png" alt="Gitea">
+            <span>Gitea</span>
+        </a>
+        <!-- AgentDVR Icon: Change href for link, src for icon image -->
+        <a href="#" target="_blank" class="icon" id="agentdvr" tabindex="0">
+            <img src="icons/placeholder.png" alt="AgentDVR">
+            <span>AgentDVR</span>
+        </a>
+        <!-- Portainer Icon: Change href for link, src for icon image -->
+        <a href="#" target="_blank" class="icon" id="portainer" tabindex="0">
+            <img src="icons/pack/placeholder.png" alt="Portainer">
+            <span>Portainer</span>
+        </a>
+        <!-- Docker Icon: Change href for link, src for icon image -->
+        <a href="#" target="_blank" class="icon" id="docker" tabindex="0">
+            <img src="icons/pack/docker.png" alt="Docker">
+            <span>Docker</span>
+        </a>
+        <!-- Kubernetes Icon: Change href for link, src for icon image -->
+        <a href="#" target="_blank" class="icon" id="kubernetes" tabindex="0">
+            <img src="icons/pack/kubernetes.png" alt="Kubernetes">
+            <span>Kubernetes</span>
+        </a>
+        <!-- Ansible Icon: Change href for link, src for icon image -->
+        <a href="#" target="_blank" class="icon" id="ansible" tabindex="0">
+            <img src="icons/placeholder.png" alt="Ansible">
+            <span>Ansible</span>
+        </a>
+        <!-- Terraform Icon: Change href for link, src for icon image -->
+        <a href="#" target="_blank" class="icon" id="terraform" tabindex="0">
+            <img src="icons/pack/terraform.png" alt="Terraform">
+            <span>Terraform</span>
+        </a>
+        <!-- Vault Icon: Change href for link, src for icon image -->
+        <a href="#" target="_blank" class="icon" id="vault" tabindex="0">
+            <img src="icons/pack/vault.png" alt="Vault">
+            <span>Vault</span>
+        </a>
+        <!-- Consul Icon: Change href for link, src for icon image -->
+         <a href="#" target="_blank" class="icon" id="consul" tabindex="0">
+            <img src="icons/placeholder.png" alt="Consul">
+            <span>Consul</span>
+        </a>
+        <!-- etcd Icon: Change href for link, src for icon image -->
+         <a href="#" target="_blank" class="icon" id="etcd" tabindex="0">
+            <img src="icons/placeholder.png" alt="etcd">
+            <span>etcd</span>
+        </a>
+        <!-- Zabbix Icon: Change href for link, src for icon image -->
+         <a href="#" target="_blank" class="icon" id="zabbix" tabindex="0">
+            <img src="icons/pack/zabbix.png" alt="Zabbix">
+            <span>Zabbix</span>
+        </a>
+        <!-- Nagios Icon: Change href for link, src for icon image -->
+         <a href="#" target="_blank" class="icon" id="nagios" tabindex="0">
+            <img src="icons/placeholder.png" alt="Nagios">
+            <span>Nagios</span>
+        </a>
+        <!-- Rancher Icon: Change href for link, src for icon image -->
+         <a href="#" target="_blank" class="icon" id="rancher" tabindex="0">
+            <img src="icons/placeholder.png" alt="Rancher">
+            <span>Rancher</span>
+        </a>
+        <!-- OpenShift Icon: Change href for link, src for icon image -->
+         <a href="#" target="_blank" class="icon" id="openshift" tabindex="0">
+            <img src="icons/pack/openshift.png" alt="OpenShift">
+            <span>OpenShift</span>
+        </a>
+
+    </div>
+    <div class="taskbar">
+        <button class="start-button">
+            <img src="icons/start_icon.webp">
+            <span>Start</span>
+        </button>
+        <!-- Start Menu Panel (Hidden by default) -->
+        <div id="start-menu" class="start-menu">
+            <ul>
+                <!-- Add other Start Menu items here -->
+                <li id="start-menu-new-shortcut">
+                    <img src="icons/new_shortcut_icon.png" alt=""> <!-- Placeholder icon -->
+                    <span>New Shortcut</span>
+                </li>
+                <li id="start-menu-save-config"> <!-- Re-added -->
+                    <img src="icons/save_icon.jpeg" alt="">
+                    <span>Save Configuration</span>
+                </li>
+                 <li id="start-menu-load-config"> <!-- Re-added -->
+                    <img src="icons/load_icon.png" alt="">
+                    <span>Load Configuration</span>
+                </li>
+                <li class="start-menu-separator"></li>
+                <li id="start-menu-shutdown"> <!-- Added ID here -->
+                     <img src="icons/shutdown_icon.png" alt=""> <!-- Placeholder icon -->
+                    <span>Shut Down...</span>
+                </li>
+                <!-- Add more items as needed -->
+            </ul>
+        </div>
+        <div class="taskbar-divider"></div>
+        <div class="quick-launch">
+            <!-- Quick Launch Icons -->
+            <img src="icons/ie_quick.png" alt="IE">
+            <img src="icons/outlook_quick.png" alt="Outlook Express">
+            <img src="icons/desktop_quick.png" alt="Show Desktop">
+            <img src="icons/channels_quick.png" alt="View Channels">
+        </div>
+        <div class="taskbar-divider"></div>
+        <div class="task-items">
+             <!-- Taskbar Items -->
+             <button class="task-item">Desktop Themes</button>
+             <button class="task-item">Extract</button>
+             <button class="task-item">My Documents</button>
+             <button class="task-item">Plus Wallpaper</button>
+        </div>
+        <div class="system-tray">
+            <!-- System Tray Icons -->
+            <img src="icons/tray_icon1.png" alt="Tray Icon 1">
+            <img src="icons/tray_icon2.png" alt="Tray Icon 2">
+            <img src="icons/tray_icon3.png" alt="Tray Icon 3">
+            <span class="time">10:22 PM</span>
+        </div>
+    </div>
+</body>
+</html>
+<!-- Context Menu (Hidden by default) -->
+    <div id="context-menu" class="context-menu">
+        <ul>
+            <li id="context-settings">Properties</li>
+            <li id="context-sort">Sort by Name</li>
+            <li class="context-menu-separator"></li>
+            <li id="context-delete">Delete</li>
+        </ul>
+    </div>
+
+    <!-- Desktop Context Menu (Hidden by default) -->
+    <div id="desktop-context-menu" class="context-menu">
+        <ul>
+            <li id="desktop-context-sort">Sort by Name</li>
+            <li class="context-menu-separator"></li> <!-- Optional separator -->
+            <li id="desktop-context-upscale">Upscale icons +</li>
+            <li id="desktop-context-downscale">Downscale icons -</li>
+            <li class="context-menu-separator"></li> <!-- Optional separator -->
+            <li id="desktop-context-new-shortcut">New Shortcut</li>
+            <!-- Add other desktop options here if needed -->
+        </ul>
+    </div>
+
+    <!-- Settings Modal (Hidden by default) -->
+    <div id="settings-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span>Icon Properties</span>
+                <button id="close-modal" class="modal-close-button">X</button>
+            </div>
+            <div class="modal-body">
+                <form id="settings-form">
+                    <label for="icon-link">Target URL:</label>
+                    <input type="url" id="icon-link" name="icon-link" required>
+
+                    <label for="icon-image">Icon Image URL or use local icon:</label>
+                    <input type="text" id="icon-image" name="icon-image" placeholder="e.g., https://site.com/icon.png or icons/local.png">
+
+                    <div class="modal-buttons">
+                        <button type="submit">Save</button>
+                        <button type="button" id="cancel-modal">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Shortcut Modal (Hidden by default) -->
+    <div id="create-shortcut-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span>Create New Shortcut</span>
+                <button id="close-create-modal" class="modal-close-button">X</button>
+            </div>
+            <div class="modal-body">
+                <form id="create-shortcut-form">
+                    <label for="shortcut-name">Shortcut Name:</label>
+                    <input type="text" id="shortcut-name" name="shortcut-name" required>
+
+                    <label for="shortcut-link">Target URL:</label>
+                    <input type="url" id="shortcut-link" name="shortcut-link" required placeholder="https://example.com">
+
+                    <label for="shortcut-image">Icon Image URL or use local icon </br>icons/pack/proxmox.png:</label>
+                    <input type="text" id="shortcut-image" name="shortcut-image" placeholder="e.g., https://site.com/icon.png or icons/pack/icon.png">
+
+                    <div class="modal-buttons">
+                        <button type="submit">Create</button>
+                        <button type="button" id="cancel-create-modal">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden file input for loading configuration -->
+    <input type="file" id="load-config-input" accept=".json" style="display: none;">
+
+    <script src="script.js"></script>
+</body>
